@@ -63,29 +63,29 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 px-4 py-6 text-white">
       <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-        <div className="p-5 bg-gray-700 border-b border-gray-600">
-          <h1 className="text-2xl font-bold text-center">Habit Tracker</h1>
+        <div className="p-4 sm:p-5 bg-gray-700 border-b border-gray-600">
+          <h1 className="text-xl sm:text-2xl font-bold text-center">Habit Tracker</h1>
         </div>
         
-        <div className="p-6">
-          <h2 className="text-xl font-medium text-center mb-6">Welcome Back</h2>
+        <div className="p-4 sm:p-6">
+          <h2 className="text-lg sm:text-xl font-medium text-center mb-4 sm:mb-6">Welcome Back</h2>
           
           {error && (
-            <div className="mb-6 p-3 bg-red-500 bg-opacity-20 border border-red-500 rounded-lg text-red-300 text-sm">
+            <div className="mb-4 sm:mb-6 p-3 bg-red-500 bg-opacity-20 border border-red-500 rounded-lg text-red-300 text-sm">
               {error}
             </div>
           )}
           
-          <form onSubmit={handleEmailLogin} className="space-y-4">
-            <div className="space-y-2">
+          <form onSubmit={handleEmailLogin} className="space-y-3 sm:space-y-4">
+            <div className="space-y-1 sm:space-y-2">
               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email Address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail size={18} className="text-gray-400" />
+                  <Mail size={16} className="text-gray-400" />
                 </div>
                 <input
                   id="email"
@@ -93,18 +93,18 @@ export default function Login() {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-3 pl-10 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 sm:p-3 pl-9 sm:pl-10 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                 />
               </div>
             </div>
             
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                 Password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock size={18} className="text-gray-400" />
+                  <Lock size={16} className="text-gray-400" />
                 </div>
                 <input
                   id="password"
@@ -112,7 +112,7 @@ export default function Login() {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full p-3 pl-10 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 sm:p-3 pl-9 sm:pl-10 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -120,31 +120,31 @@ export default function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full p-3 flex items-center justify-center bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors disabled:opacity-70"
+              className="w-full p-2 sm:p-3 flex items-center justify-center bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors disabled:opacity-70 text-sm sm:text-base"
             >
               {isLoading ? (
                 <span>Logging in...</span>
               ) : (
                 <>
-                  <LogIn size={18} className="mr-2" />
+                  <LogIn size={16} className="mr-2" />
                   Log In
                 </>
               )}
             </button>
           </form>
           
-          <div className="flex items-center my-6">
+          <div className="flex items-center my-4 sm:my-6">
             <hr className="flex-grow border-gray-600" />
-            <span className="px-3 text-sm text-gray-400">or continue with</span>
+            <span className="px-2 sm:px-3 text-xs sm:text-sm text-gray-400">or continue with</span>
             <hr className="flex-grow border-gray-600" />
           </div>
           
           <button
             onClick={handleGoogleLogin}
             disabled={isLoading}
-            className="w-full p-3 flex items-center justify-center bg-gray-700 border border-gray-600 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors disabled:opacity-70"
+            className="w-full p-2 sm:p-3 flex items-center justify-center bg-gray-700 border border-gray-600 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors disabled:opacity-70 text-sm sm:text-base"
           >
-            <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -166,8 +166,8 @@ export default function Login() {
           </button>
         </div>
         
-        <div className="p-4 bg-gray-700 border-t border-gray-600 text-center">
-          <p className="text-gray-300">
+        <div className="p-3 sm:p-4 bg-gray-700 border-t border-gray-600 text-center">
+          <p className="text-xs sm:text-sm text-gray-300">
             Don't have an account?{" "}
             <button
               onClick={() => router.push("/signup")}
